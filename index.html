@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uluçınar kayıt formu</title>
+    <link rel="stylesheet" href="/form.80ee2152.css">
+<script src="/form.80ee2152.js"></script></head>
+
+<body>
+    
+    <div class="kapsayici">
+        <form name="submit-to-google-sheet">
+            <div class="container">
+
+                <div class="resim">
+                    <img src="/hayrat.f390a54c.jpeg" alt="">
+
+                </div>
+                <div class="isim">
+                    <label for="ad">isim</label>
+                    <input id="ad" required="" placeholder="yunus talha" autocomplete="off" type="text" name="ad">
+                </div>
+
+                <div class="soy">
+                    <label for="soy">Soyisim</label>
+                    <input id="soy" placeholder="çoban" type="text" required="" autocomplete="off" name="soy">
+                </div>
+
+                <div class="tel">
+                    <label for="tel">telefon numarası</label>
+                    <input id="tel" autocomplete="off" maxlength="11" minlength="11" placeholder="0(5xx.xxx.xx.xx)" type="tel" name="tel">
+                </div>
+
+                <div class="okul">
+                    <label>Okulunuzu Seçiniz
+                        <select name="mektep">
+                            <option value="mektep">Açık Öğretim Lisesi</option>
+                            <option value="mektep">İmam-hatip Lisesi</option>
+                            <option value="mektep">Endüstri Meslek lisesi</option>
+                            <option value="mektep">Fen lisesi</option>
+                            <option value="mektep">Ticaret lisesi</option>
+                            <option value="mektep">Ertuğrul Gazi Lisesi</option>
+                            <option value="mektep">15 Temmuz Anadolu Lisesi </option>
+                            <option value="mektep">Sağlık Meslek Lisesi</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="sinif">
+                    <label>sınıfınız
+                        <select name="yas">
+                            <option value="yas">9</option>
+                            <option value="yas">10</option>
+                            <option value="yas">11</option>
+                            <option value="yas">12</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="radio">
+                    <p>osmanlıca biliyormusunuz?</p>
+                    <div class="sec">
+                        <label class="fl" for="bil"><input id="bil" required="" class="tık" type="radio" name="osm">Evet</label>
+                        <label class="fl" for="bil2"><input id="bil2" required="" class="tık" type="radio" name="osm">hayır</label>
+                    </div>
+                </div>
+                <div class="button">
+                    <input class="buton gndr" type="submit" value="Gönder">
+                    <input class="buton rst" type="reset" value="Sil">
+                </div>
+
+            </div>
+
+        </form>
+
+        <span id="success"></span>
+
+    </div>
+
+    <script>var scriptURL = 'https://script.google.com/macros/s/AKfycbxvCtLmDWyrJ2cgm1c4wdk3RKqKSHuRpRtJENtGVeFRX70uVElCsUAIL6A-ZD0UeGLe/exec';
+var form = document.forms['submit-to-google-sheet'];
+var success = document.getElementsById("success");
+form.addEventlistener('submit', function (e) {
+  e.preventDefault();
+  fetch(scriptURL, {
+    method: 'POST',
+    body: new FormData(form)
+  }).then(function (response) {
+    success.innerHTML = "data successfully submit";
+    setTimeout(function () {
+      success.innerHTML = "data successfully submit";
+    }, 5000);
+    form.reset();
+  }).catch(function (error) {
+    return console.error('Error!', error.massenge);
+  });
+});</script>
+
+</body>
+
+</html>
